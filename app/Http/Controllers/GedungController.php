@@ -13,7 +13,7 @@ class GedungController extends Controller
     public function index()
     {
         $gedungs = Gedung::all();
-        return view('gedung.index', compact('gedungs'));
+        return view('app.gedung.index', compact('gedungs'));
     }
 
     /**
@@ -21,7 +21,7 @@ class GedungController extends Controller
      */
     public function create()
     {
-        return view('gedung.create');
+        return view('app.gedung.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class GedungController extends Controller
             'alamat' => $request->alamat,
         ]);
 
-        return redirect()->route('gedung.index');
+        return redirect()->route('app.gedung.index');
     }
 
     /**
@@ -58,7 +58,7 @@ class GedungController extends Controller
     public function edit(string $id)
     {
         $gedung = Gedung::find($id);
-        return view('gedung.edit', compact('gedung'));
+        return view('app.gedung.edit', compact('gedung'));
     }
 
     /**
@@ -73,7 +73,7 @@ class GedungController extends Controller
         $gedung->alamat = $request->alamat;
         $gedung->save();
 
-        return redirect()->route('gedung.index');
+        return redirect()->route('app.gedung.index');
     }
 
     /**
@@ -83,6 +83,6 @@ class GedungController extends Controller
     {
         $gedung = Gedung::find($id);
         $gedung->delete();
-        return redirect()->route('gedung.index');
+        return redirect()->route('app.gedung.index');
     }
 }

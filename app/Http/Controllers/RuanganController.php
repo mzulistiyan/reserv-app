@@ -14,7 +14,7 @@ class RuanganController extends Controller
     public function index()
     {
         $ruangans = ruangan::with('gedung')->get();
-        return view('ruangan.index', compact('ruangans'));
+        return view('app.ruangan.index', compact('ruangans'));
     }
 
     /**
@@ -24,7 +24,7 @@ class RuanganController extends Controller
     {
         //get with all data gedung
         $gedungs = Gedung::all();
-        return view('ruangan.create', compact('gedungs'));
+        return view('app.ruangan.create', compact('gedungs'));
     }
 
     /**
@@ -46,7 +46,7 @@ class RuanganController extends Controller
         ]);
 
 
-        return redirect()->route('ruangan.index');
+        return redirect()->route('app.ruangan.index');
     }
 
     /**
@@ -65,7 +65,7 @@ class RuanganController extends Controller
         //get with relasi to gedung
         $ruangan = ruangan::with('gedung')->find($id);
         $gedungs = Gedung::all();
-        return view('ruangan.edit', compact('ruangan', 'gedungs'));
+        return view('app.ruangan.edit', compact('ruangan', 'gedungs'));
     }
 
     /**
@@ -80,7 +80,7 @@ class RuanganController extends Controller
         $ruangan->id_gedung = $request->id_gedung;
 
         $ruangan->update();
-        return redirect()->route('ruangan.index');
+        return redirect()->route('app.ruangan.index');
     }
 
     /**

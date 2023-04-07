@@ -14,7 +14,7 @@ class ReservasiController extends Controller
     public function index()
     {
         $reservasis = Reservasi::with('ruangan')->get();
-        return view('reservasi.index', compact('reservasis'));
+        return view('app.reservasi.index', compact('reservasis'));
     }
 
     /**
@@ -69,7 +69,7 @@ class ReservasiController extends Controller
         $reservasi->update();
         $ruangan->update();
 
-        return redirect()->route('reservasi.index');
+        return redirect()->route('app.reservasi.index');
     }
 
     /**
