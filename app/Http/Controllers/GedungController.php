@@ -73,7 +73,7 @@ class GedungController extends Controller
         $gedung->alamat = $request->alamat;
         $gedung->save();
 
-        return redirect()->route('app.gedung.index');
+        return redirect()->route('gedung.index');
     }
 
     /**
@@ -83,6 +83,6 @@ class GedungController extends Controller
     {
         $gedung = Gedung::find($id);
         $gedung->delete();
-        return redirect()->route('app.gedung.index');
+        return redirect()->route('gedung.index');
     }
 }
