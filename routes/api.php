@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//get from gedung api
+Route::get('/gedung', 'App\Http\Controllers\API\TestController@indexGedung');
+Route::post('/postGedung', 'App\Http\Controllers\API\TestController@storeGedung');

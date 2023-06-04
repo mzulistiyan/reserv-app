@@ -41,7 +41,7 @@ class GedungController extends Controller
             'alamat' => $request->alamat,
         ]);
 
-        return redirect()->route('app.gedung.index');
+        return redirect()->route('gedung.index');
     }
 
     /**
