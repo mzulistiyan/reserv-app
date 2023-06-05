@@ -46,7 +46,7 @@ class RuanganController extends Controller
         ]);
 
 
-        return redirect()->route('app.ruangan.index');
+        return redirect()->route('ruangan.index');
     }
 
     /**

@@ -21,3 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //get from gedung api
 Route::get('/gedung', 'App\Http\Controllers\API\TestController@indexGedung');
 Route::post('/postGedung', 'App\Http\Controllers\API\TestController@storeGedung');
+
+//get from ruangan api
+Route::get('/ruangan', 'App\Http\Controllers\API\TestController@indexRuangan');
+Route::post('/postRuangan', 'App\Http\Controllers\API\TestController@storeRuangan');
+
+//get from user api
+Route::get('/user', 'App\Http\Controllers\API\TestController@indexUser');
+Route::post('/postUser', 'App\Http\Controllers\API\TestController@storeUser');

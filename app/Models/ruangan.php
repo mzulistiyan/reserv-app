@@ -13,6 +13,7 @@ class ruangan extends Model
     protected $fillable = [
         'nomor_ruangan',
         'id_gedung',
+        'nama_gedung',
         'status_ruangan',
     ];
 
